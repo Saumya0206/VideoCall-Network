@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <script>
+    const roomName = "<%= roomName %>"
+  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #040405;
+    }
+
+
+    #message-container {
+      background-color: transparent;
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    #message-container div {
+      font-size: 20px;
+      background-color: #e398e6;
+      opacity: 0.7;
+      padding: 5px;
+      border-radius: 5px;
+      margin: 4px;
+    }
+
+    #message-container div:nth-child(2n) {
+      margin: 4px;
+      opacity: 0.7;
+      background-color: #7EB2DD;
+      border-radius: 5px;
+    }
+
+    #send-container {
+      position: fixed;
+      padding-bottom: 30px;
+      bottom: 0;
+      background: transparent;
+      max-width: 1200px;
+      height: 50px;
+      width: 80%;
+      display: flex;
+      border-radius: 5px;
+    }
+
+
+    #message-input {
+      flex-grow: 1;
+      border-radius: 5px;
+      padding: 5px;
+      border-style: inset;
+    }
+
+    .btns {
+      text-decoration: none;
+      margin: 7px;
+      padding: 5px;
+      border-color: transparent;
+      background-color: rgb(61, 61, 61);
+      color: white;
+      border-style: inset;
+      border-radius: 5px;
+      size: 10px;
+    }
+
+    .btns a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .btns:hover {
+      background-color: #676677;
+      column-count: black;
+      border-radius: 7px;
+    }
+  </style>
+</head>
+
+<!-- Message Containers -->
+<div id="message-container"></div>
+<form id="send-container">
+  <input type="text" id="message-input" placeholder="Type message...">
+  <button type="submit" id="send-button" class="btns">Send</button>
+  <button type="button" id="VideoCall" class="btns"><a href="https://videocall-webapp.herokuapp.com/" target="_blank"
+      rel="noopener noreferrer">Video Call</a></button>
+  <button type="button" id="fun" class="btns"><a href="https://video-call-home.herokuapp.com/fun" target="_blank"
+    rel="noopener noreferrer">Fun</a></button>
+    <button type="button" id="home" class="btns"><a href="https://video-call-home.herokuapp.com" target="_blank"
+      rel="noopener noreferrer">Home</a></button>
+</form>
+</body>
+
+</html>
